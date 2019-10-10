@@ -17,8 +17,6 @@ pool:
 variables:
   buildConfiguration: 'Release'
 
-steps:
-
 # do this before all your .NET Core tasks
 steps:
 - task: UseDotNet@2
