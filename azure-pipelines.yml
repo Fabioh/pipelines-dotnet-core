@@ -10,8 +10,18 @@ pr:
 - master
 - develop
 
+strategy:
+  matrix:
+    linux:
+      imageName: "ubuntu-16.04"
+    macos:
+      imageName: "macOS-10.14"
+    win:
+      imageName: "vs2017-win2016"
+  maxParallel: 3
+
 pool:
-  vmImage: 'ubuntu-16.04'
+  vmImage: $(imageName)
 
 variables:
   buildConfiguration: 'Release'
