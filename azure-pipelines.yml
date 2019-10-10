@@ -16,14 +16,14 @@ pool:
 
 variables:
   buildConfiguration: 'Release'
+  sdkVersion: '2.2.x'
 
-# do this before all your .NET Core tasks
+
 steps:
 - task: UseDotNet@2
   displayName: 'Install .NET Core SDK'
   inputs:
-    version: 2.2.x
-# ...
+    version: $(sdkVersion)
 
 - script: dotnet build --configuration $(buildConfiguration)
   displayName: 'dotnet build $(buildConfiguration)'
